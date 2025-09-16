@@ -13,7 +13,7 @@ config_version=5
 config/name="flight-club"
 run/main_scene="uid://ljiutijmgnf5"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bmgs534qy3pp5"
 
 [dotnet]
 

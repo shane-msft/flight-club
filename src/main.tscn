@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://ljiutijmgnf5"]
+
+[ext_resource type="PackedScene" uid="uid://ca77jkjbluor0" path="res://src/player/player.tscn" id="1_eewff"]
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+
+[sub_resource type="Environment" id="Environment_ig7tw"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+
+[sub_resource type="Gradient" id="Gradient_kkvs4"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rr2wm"]
+gradient = SubResource("Gradient_kkvs4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.391661, 0.301637, 1, 1)
+albedo_texture = SubResource("GradientTexture1D_rr2wm")
+albedo_texture_force_srgb = true
+metallic = 0.75
+metallic_specular = 1.0
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+material = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, -11.2197, 25, 5.53171)
+light_energy = 7.244
+light_specular = 4.01
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 20, 0, 0, 0)
+layers = 8193
+mesh = SubResource("PlaneMesh_0xm2m")
+
+[node name="Player" parent="." instance=ExtResource("1_eewff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0597665, 0.390209, -0.124972)

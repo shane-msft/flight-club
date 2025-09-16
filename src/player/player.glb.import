@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d344ytqw1chm4"
-path="res://.godot/imported/dragon.glb-95316eba7c1645edaf15494c21779939.scn"
+path="res://.godot/imported/player.glb-768e46b6286575209cb81820e1208548.scn"
 
 [deps]
 
-source_file="res://assets/3d/dragon.glb"
-dest_files=["res://.godot/imported/dragon.glb-95316eba7c1645edaf15494c21779939.scn"]
+source_file="res://src/player/player.glb"
+dest_files=["res://.godot/imported/player.glb-768e46b6286575209cb81820e1208548.scn"]
 
 [params]
 

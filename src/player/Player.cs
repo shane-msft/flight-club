@@ -12,10 +12,18 @@ public partial class Player : CharacterBody3D
 	private float pitch = 0f;
 
 	private Vector3 cameraOffset = new(0, 5, -10); // height=2, behind=4
+	
+	public override void _EnterTree()
+	{
+		GD.Print("Player entered tree");
+	}
 
 	public override void _Ready()
 	{
 		camera = GetNode<Camera3D>("Camera3D");
+		GD.Print("Camera Initialized: " + camera.Name);
+
+		camera.MakeCurrent();
 		camera.Current = true; // ensure camera is active
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
