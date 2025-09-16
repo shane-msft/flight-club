@@ -14,7 +14,7 @@ public partial class Player : CharacterBody3D
 
 	private float yaw = 0f;
 	private float pitch = 0f;
-	private float zoomDistance = 10f; // initial zoom (matches Z in cameraOffset)
+	private float zoomDistance = 20f; // initial zoom (matches Z in cameraOffset)
 	
 	public override void _EnterTree()
 	{

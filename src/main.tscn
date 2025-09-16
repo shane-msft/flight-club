@@ -1,12 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://ljiutijmgnf5"]
+[gd_scene load_steps=10 format=3 uid="uid://ljiutijmgnf5"]
 
 [ext_resource type="PackedScene" uid="uid://ca77jkjbluor0" path="res://src/player/player.tscn" id="1_eewff"]
+[ext_resource type="Texture2D" uid="uid://crtxe7mi80vyj" path="res://assets/skybox/sky_04/sky_04_2k.png" id="1_gh0ne"]
 
-[sub_resource type="Sky" id="Sky_ig7tw"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5q4o7"]
+panorama = ExtResource("1_gh0ne")
+
+[sub_resource type="Sky" id="Sky_3cfgd"]
+sky_material = SubResource("PanoramaSkyMaterial_5q4o7")
 
 [sub_resource type="Environment" id="Environment_ig7tw"]
 background_mode = 2
-sky = SubResource("Sky_ig7tw")
+sky = SubResource("Sky_3cfgd")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.25
 ambient_light_energy = 0.51

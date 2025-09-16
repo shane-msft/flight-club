@@ -12,8 +12,8 @@ script = ExtResource("1_4flbx")
 shape = SubResource("BoxShape3D_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.963919, 0.266195, 0, -0.266195, 0.963919, -0.233645, 7.15913, 9.55707)
+transform = Transform3D(1, 0, 0, 0, 0.963919, 0.266195, 0, -0.266195, 0.963919, -0.234, 7.159, 15)
 current = true
 
 [node name="dragon" parent="." instance=ExtResource("2_onrkg")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

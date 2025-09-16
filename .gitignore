@@ -4,6 +4,9 @@
 
 # Godot-specific ignores
 .import/
+*.png.import
+*.svg.import
+
 export.cfg
 export_credentials.cfg
 
