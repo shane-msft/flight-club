@@ -7,6 +7,9 @@
 [sub_resource type="Environment" id="Environment_ig7tw"]
 background_mode = 2
 sky = SubResource("Sky_ig7tw")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.25
+ambient_light_energy = 0.51
 
 [sub_resource type="Gradient" id="Gradient_kkvs4"]
 
@@ -35,7 +38,7 @@ light_specular = 4.01
 environment = SubResource("Environment_ig7tw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 5, 0, 0, 0, 20, -0.100813, -1.46996, 1.13397)
 layers = 8193
 mesh = SubResource("PlaneMesh_0xm2m")
 

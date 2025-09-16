@@ -6,12 +6,15 @@ public partial class Player : CharacterBody3D
 	[Export] public float FlySpeed = 20f;
 	[Export] public float MouseSensitivity = 0.1f;
 
+	[Export] public float ZoomSpeed = 2f;
+	[Export] public float MinZoom = 5f;
+	[Export] public float MaxZoom = 20f;
+
 	private Camera3D camera;
 
 	private float yaw = 0f;
 	private float pitch = 0f;
-
-	private Vector3 cameraOffset = new(0, 5, -10); // height=2, behind=4
+	private float zoomDistance = 10f; // initial zoom (matches Z in cameraOffset)
 	
 	public override void _EnterTree()
 	{
@@ -54,6 +57,21 @@ public partial class Player : CharacterBody3D
 			pitch = Mathf.Clamp(pitch, -30f, 60f); // limit vertical orbit
 		}
 
+
+		if (@event is InputEventMouseButton mouseButton)
+		{
+			if (mouseButton.ButtonIndex == MouseButton.WheelUp)
+			{
+				zoomDistance -= ZoomSpeed;
+			}
+			else if (mouseButton.ButtonIndex == MouseButton.WheelDown)
+			{
+				zoomDistance += ZoomSpeed;
+			}
+
+			zoomDistance = Mathf.Clamp(zoomDistance, MinZoom, MaxZoom);
+		}
+
 		if (@event.IsActionPressed("game_close"))
 		{
 			if (Input.MouseMode == Input.MouseModeEnum.Captured)
@@ -92,7 +110,7 @@ public partial class Player : CharacterBody3D
 		MoveAndSlide();
 
 		// Rotate offset by yaw and pitch
-		Vector3 rotatedOffset = cameraOffset;
+		Vector3 rotatedOffset = new(0, 5, zoomDistance);
 
 		// Horizontal rotation (yaw)
 		rotatedOffset = rotatedOffset.Rotated(Vector3.Up, yaw * (Mathf.Pi / 180f));
